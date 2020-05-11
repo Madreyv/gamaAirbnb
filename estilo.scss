@@ -1,0 +1,380 @@
+body{
+	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue;
+	background-color: white;
+	scroll: auto;
+}
+
+header{
+	padding-top: 1%;
+	padding-bottom: 2%;
+	border-bottom: 1px solid #EBEBEB;
+	a{
+		img{
+			width: 11%;
+		}
+	}
+}
+
+.formularioInicio{
+	border: 1px solid #F7F7F7;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    color: #222222;
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+
+    .form-group{
+    	width: 40%;
+    	margin-bottom: 0;
+    	padding: 0.5% 1%;
+    	border: 2px solid transparent;
+    	border-radius: 15px;
+
+    	label{
+    		display: inline-block;
+		    font-size: 11px;
+		    font-size: 10px;
+		    line-height: 12px;
+		    font-weight: 800;
+		    letter-spacing: 0.04em;
+		    text-transform: uppercase;
+		    padding-bottom: 4px;
+    	}
+
+    	input{
+    		display: block;
+		    border: 0px;
+		    margin: 0px;
+		    padding: 0px;
+		    width: 100%;
+		    background: none;
+		    font-size: 14px;
+		    line-height: 18px;
+		    font-weight: 600;
+		    color: #222222;
+		    text-overflow: ellipsis;
+    	}
+
+    	input:focus{
+    		box-shadow: none;
+    	}
+
+    	.btn-light{
+    		background-color: #fff;
+    		.confirmacaoHospedes{
+    			float: left;
+    		}
+    		.arrow{
+    		float: right;
+    		text-align: right;
+    		width: 45%;
+
+    		img{
+    			width: 15%;
+    		}
+    	}
+    	}
+    }
+
+    .form-group:hover{
+    	border-color: #DDDDDD;
+    	transition: border-color 0.5s ease;
+    }
+
+    .form-group:focus{
+    	border-color: #222222
+    }
+
+    .btn-primary{
+    	width: 12%;
+	    height: 48px;
+	    position: relative;
+	    margin: auto 1%;
+	    background-color: rgb(255, 56, 92);
+	    border-color: rgb(255, 56, 92);
+	    border-radius: 8px;
+    }
+}
+
+.quantidadeHospedes{
+    position: absolute;
+    z-index: 99999;
+    border-radius: 11px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.08);
+    color: #222222;
+    width: 30%;
+	
+	ul{
+		list-style-type: none;
+		padding-left: 2%;
+		margin-bottom: 0;
+		li{
+
+			ul{
+				-webkit-box-pack: justify;
+			    -webkit-box-align: center;
+			    color: rgb(34, 34, 34);
+			    padding-top: 16px;
+			    padding-bottom: 16px;
+			    padding-right: 4px;
+			    display: flex;
+			    align-items: center;
+			    justify-content: space-between;
+			    min-width: 330px;
+			    border-bottom: 1px solid rgb(235, 235, 235);
+			    background-color: #fff;
+			}
+
+			ul:not(:last-child) {
+			    border-bottom: 1px solid rgb(235, 235, 235);
+			}
+			.textoHospedes{
+				float: left;
+				h6{
+					font-size: 16px;
+				    line-height: 20px;
+				    font-weight: 600;
+				    margin: 0;
+				}
+
+				span{
+					font-size: 14px;
+				    line-height: 18px;
+				    font-weight: 400;
+				    color: rgb(113, 113, 113);
+				}
+			}
+
+			.contadorHospedes{
+				 float: right;
+					 width: 30%;
+					 margin: 3% 1%;
+
+					 div{
+					 	display: inline-block;
+					 }
+
+					 .botaoMais{
+					 	float: right;
+					 }
+
+					 .botaoMais, .botaoMenos{
+					 	-webkit-box-pack: center;
+				    -webkit-box-align: center;
+				    -webkit-box-flex: 0;
+				    width: 32px;
+				    height: 32px;
+				    flex-grow: 0;
+				    flex-shrink: 0;
+				    cursor: pointer;
+				    display: inline-flex;
+				    text-align: center;
+				    color: rgb(113, 113, 113);
+				    font-family: inherit;
+				    touch-action: manipulation;
+				    align-items: center;
+				    justify-content: center;
+				    margin: 0px;
+				    padding: 0px;
+				    text-decoration: none;
+				    border-width: 1px;
+				    border-style: solid;
+				    border-color: rgb(176, 176, 176);
+				    outline: none;
+				    background: rgb(255, 255, 255);
+				    border-radius: 50%;
+					 }
+
+					 .numeroHospedes{
+					 	text-align: center;
+				    padding-left: 8%;
+				    padding-right: 8%;
+					 }
+			}
+		}
+	} 
+}
+
+.vitrine{
+ 	position: relative;
+ 	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    height: 200px;
+    padding-top: 4px;
+    padding-bottom: 24px;
+    margin-top: 2%;
+    border-bottom: 1px solid #EBEBEB;
+
+    .row{
+    	width: 100%;
+    }
+
+ 	.areaImagem{
+ 		position: relative;
+	    top: 0px;
+	    bottom: 0px;
+	    left: 0px;
+	    right: 0px;
+	    height: 100%;
+	    width: 300px;
+	    border-radius:8px;
+	    background-size: contain;
+	    background-repeat: round;
+	   
+ 	}
+
+ 	.areaEscrita{
+
+ 		.tituloEsub{
+
+ 			h6{
+ 				color: #717171;
+			    -webkit-flex: 1;
+			    -ms-flex: 1 1 0%;
+			    flex: 1;
+			    line-height: 18px;
+			    max-height: 18px;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    display: -webkit-box;
+			    -webkit-line-clamp: 1;
+			    -webkit-box-orient: vertical;
+ 			}
+
+ 			h4{
+ 				font-weight: 400;
+			    color: #222222;
+			    font-size: 18px;
+			    line-height: 24px;
+ 			}
+
+		}
+ 	}
+
+ 	.areaPreco{
+		position: absolute;
+	    right: 0;
+	    bottom: 0;
+		h3{
+			font-size: 21px;
+		}
+
+		.precoTotal{
+			h3{
+				font-size: 14px;
+			    text-decoration: underline;
+			    color: #717171;
+			}
+		}
+
+
+	}
+}
+
+.areaProdutoSelecionado{
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	padding-left: 3%;
+    padding-right: 3%;
+
+    .produtoSelecionado{
+    	margin: 0px 4%;
+	    border: 1px solid #e4e4e4 !important;
+	    background-color: #ffffff !important;
+	    height: 380px;
+	    width: 75%;
+    }
+
+    form{
+    	padding: 3%;
+
+    	.quantidadeHospedes ul li ul{
+    		min-width: 330px;
+    	}
+
+    	label{
+    		margin: 0;
+    	}
+
+    	.confirmacaoHospedes{
+    		float: left;
+    	}
+
+    	.arrow{
+    		float: right;
+    		text-align: right;
+
+    		img{
+    			width: 15%;
+    		}
+    	}
+
+    	h3, h6, label, .totalProdutoSelecionado{
+    		overflow-wrap: break-word !important;
+		    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+		    font-size: 12px !important;
+		    font-weight: 600 !important;
+		    line-height: 1.33333em !important;
+		    color: rgb(72, 72, 72) !important;
+		    span{
+		    	font-size: 18px;
+		    }
+
+		    h4{
+		    	font-size: 14px;
+		    	display: inline;
+		    }
+    	}
+
+    	h6, label{
+		    margin: 0px !important;
+    	}
+
+    	.btn-primary{
+		    font-size: 18px;
+		    width: 100%;
+    	}
+    }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary, .btn-primary:hover, .btn-primary:focus{
+	background-color: #ff385c;
+	border-color: #ff385c;
+}
+
+.btn-primary:focus{
+	box-shadow: 0 0 0 0.2rem rgba(255,136,34,.5);
+}
+
+.esqueda{
+	float: left;
+	display: inline;
+}
+
+.direita{
+	float: right;
+	display: inline;
+}
+
+.esconder{
+ 	display: none;
+}
+
+.borda{
+ 	border: 1px solid red;
+}
+
+.bordaP{
+ 	border: 1px solid black;
+}
