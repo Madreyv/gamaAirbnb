@@ -9,7 +9,10 @@ var numeroHospedes = document.getElementsByClassName('numeroHospedes');
 var botaoMenos = document.getElementsByClassName('botaoMenos');
 var confirmacaoHospedes = document.getElementsByClassName('confirmacaoHospedes');
 var quartos = document.getElementsByClassName('vitrine');
+var produtoSelecionado = document.getElementById('produtoSelecionado');
 
+//console.log(secaoVitrine);
+//fazerRequisicao(document.getElementsByClassName('vitrine').length, 2);
 
 //console.log(secaoVitrine);
 
@@ -21,16 +24,26 @@ for (var i = 0; i < botaoMais.length; i++) {
 
 botaoBuscar.addEventListener('click', () => botaoDeBusca() )
 
+function pegarDias(entrada, saida){
+	let diaDeEntrada = new Date(entrada.value);
+	let diaDeSaida = new Date(saida.value);
+	let diferença = Math.abs(diaDeSaida.getTime() - diaDeEntrada.getTime());
+	let dias = Math.ceil(diferença / (1000 * 60 * 60 * 24))
+
+	return dias;
+}
 
 function botaoDeBusca(){
-	let diaDeEntrada = new Date(entrada.value);
+	/*let diaDeEntrada = new Date(entrada.value);
 	let diaDeSaida = new Date(saida.value);
 	let diferença = Math.abs(diaDeSaida.getTime() - diaDeEntrada.getTime()); // Subtrai uma data pela outra
 	let dias = Math.ceil(diferença / (1000 * 60 * 60 * 24))
-	//console.log(days)
+	//console.log(days)*/
+	dias = pegarDias(entrada, saida);
 	fazerRequisicao(document.getElementsByClassName('vitrine').length, dias);
 	trocarEstado(secaoVitrine, "esconder");
 	quartos = document.getElementsByClassName('vitrine');
+	trocarEstado(quadroHospedes[0], "esconder");
 
 	window.onscroll = scroll;
 
@@ -40,40 +53,50 @@ function botaoDeBusca(){
 			quartos = document.getElementsByClassName('vitrine');
 		}
 	}
-	console.log(quartos);
 }
 
-for (var i = 0; i < quartos.length; i++) {
+/*for (var i = 0; i < quartos.length; i++) {
 	quartos[i].addEventListener('click', console.log(i))
-}
+}*/
+
 
 function adcionarQuarto(indice){
-	console.log(indice);
+
+	if (produtoSelecionado.classList.contains('esconder')) {
+		trocarEstado(produtoSelecionado, 'esconder')
+	}
+
+
+
+	let itemProdutoSelecionado = document.getElementsByClassName('itemProdutoSelecionado');
+	let dias = pegarDias(entrada, saida);
+	let total = document.getElementsByClassName('precoTotal')[indice].childNodes[0].innerHTML;
+	let textoBase = document.getElementsByClassName('areaPreco')[indice].childNodes[0].innerHTML;
+	console.log(textoBase);
+	//let valorUm = ...
+	itemProdutoSelecionado[0].innerHTML = textoBase.replace("/noite", " ");
+	itemProdutoSelecionado[1].value = entrada.value;
+	itemProdutoSelecionado[2].value = saida.value;
+	itemProdutoSelecionado[3].innerHTML = confirmacaoHospedes[0].innerHTML;
+	itemProdutoSelecionado[4].innerHTML = textoBase.replace("/", " x " + dias + " ");
+	itemProdutoSelecionado[5].innerHTML = total//.replace("Total de", "");
+	//document.getElementById('checkInSelecionado').value = entrada.value;
+
 	/*var request = new XMLHttpRequest()
 
 	request.open('GET', 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72', true);
 	request.onload = function() {
-		
-	  var quarto = JSON.parse(this.response);
-	  if (request.status >= 200 && request.status < 400) {
-
-	  	for (var i = indice ; i < itensDaPagina + 6; i++) {
-	  		if (quarto[i] != null) {
-	  			let estruturaHTMLQuartos = '<div class="row vitrine"><div class="col-md-5 col-sm-5 areaImagem" style="background-image: url('+ quarto[i].photo + ');"></div><div class="col-md-7  areaEscrita"><div class="tituloEsub"><h6>'+quarto[i].property_type+' inteiro</h6><h4>'+ quarto[i].name +'</h4></div><div class="areaPreco"><h3>R$'+ quarto[i].price +'/noite</h3><div class="precoTotal"><h3>Total de R$' + quarto[i].price * dias +'</h3></div></div></div>';
-	  			
-	  		vitrine.innerHTML += estruturaHTMLQuartos;
-	  		}
-	  		
+		var quarto = JSON.parse(this.response);
+	  	if (request.status >= 200 && request.status < 400) {
+	  		let i =  indice;
+		  	let estruturaHTMLQuartos = '<div class="row vitrine"><div class="col-md-5 col-sm-5 areaImagem" style="background-image: url('+ quarto[i].photo + ');"></div><div class="col-md-7  areaEscrita"><div class="tituloEsub"><h6>'+quarto[i].property_type+' inteiro</h6><h4>'+ quarto[i].name +'</h4></div><div class="areaPreco"><h3>R$'+ quarto[i].price +'/noite</h3><div class="precoTotal"><h3>Total de R$' + quarto[i].price +'</h3></div></div></div>';
+		  	console.log(estruturaHTMLQuartos);
 	  	}
-	  }
 	}
 
 	// Send request
-	request.send()
-}*/
-
+	request.send()*/
 }
-
 
 numeroDeHospedes.addEventListener('click', () => trocarEstado(quadroHospedes[0], 'esconder') )
 function completar(){
